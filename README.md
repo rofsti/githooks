@@ -27,10 +27,10 @@ and everyone improves their `pre-commit` or `pre-push` processes.
 
 This script can be easily adopted to move some of the process to run during `pre-push`
 
-#### Special Note on for Projects with NPM part of the requirement.
+#### Special Note for Projects with NPM part of the requirement.
 
 You can leverage the [husky](https://typicode.github.io/husky/) package and adopt the scripts above.
 
-#### Special Note on for Projects using Python.
+#### Special Note for Projects using Python.
 
 There is a python based framework at [pre-commit.com](https://pre-commit.com) and adopt the scripts above.
