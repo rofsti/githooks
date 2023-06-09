@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Run `mvn formatter:validate` command
+mvn formatter:validate
+if [ $? -ne 0 ]; then
+  echo "Maven Formatter Validate failed."
+  exit 1
+fi

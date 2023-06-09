@@ -1,0 +1,25 @@
+#!/bin/bash
+
+HOOKS_DIR=`git config --local core.hooksPath`/pre-commit.d
+failed_scripts=()
+
+# Loop through the files in the pre-commit directory
+for script in "$HOOKS_DIR"/*; do
+  if [ -x "$script" ]; then
+    if ! "$script"; then
+      echo "Pre-commit script $script failed."
+      failed_scripts+=("$script")
+    fi
+    echo ""
+  fi
+done
+
+# If any script failed, display an error message and return a non-zero exit status
+if [ ${#failed_scripts[@]} -ne 0 ]; then
+  echo "The following pre-commit scripts failed:"
+  for failed_script in "${failed_scripts[@]}"; do
+    echo "- $failed_script"
+  done
+  echo "Please fix the issues before committing."
+  exit 1
+fi

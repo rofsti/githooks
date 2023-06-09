@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Run `mvn verify` command
+mvn verify
+if [ $? -ne 0 ]; then
+  echo "Maven verify failed. Please fix the issues before committing."
+  exit 1
+fi
