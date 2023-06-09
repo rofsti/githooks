@@ -18,7 +18,7 @@ The `.gitattributes` file preserves the executable bit in all the files.
 ## Usage
 
 Simply copy all the files inside the name of the primary language your project is all about
-into the root directory of your project and run `./setup-githook.sh`
+into the root directory of your project and run `./setup-git-hooks.sh`
 
 ### Note
 
